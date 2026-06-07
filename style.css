@@ -1,0 +1,13 @@
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 20px 80px;
+    background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+    url("https://kolesa-uploads.ru/-/c1f54c17-c7a3-46b9-96ab-f2d5e048e2a8/36.jpg");
+    background-size:cover;
+    background-position:center;
+    text-align:center;
+}
