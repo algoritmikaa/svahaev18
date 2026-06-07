@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Такси Магомед</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#111;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#ffd000;
+    font-size:28px;
+    font-weight:800;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffd000;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 20px 80px;
+    background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+    url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    text-align:center;
+}
+
+.hero-content{
+    max-width:900px;
+    animation:fadeUp 1.2s ease;
+}
+
+.hero h1{
+    font-size:65px;
+    margin-bottom:20px;
+    color:#ffd000;
+}
+
+.hero p{
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+.driver{
+    font-size:26px;
+    font-weight:700;
+    margin-bottom:35px;
+}
+
+.call-btn{
+    display:inline-block;
+    padding:18px 40px;
+    font-size:22px;
+    font-weight:700;
+    text-decoration:none;
+    background:#ffd000;
+    color:#000;
+    border-radius:50px;
+    transition:.3s;
+    box-shadow:0 0 25px rgba(255,208,0,.4);
+}
+
+.call-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 35px rgba(255,208,0,.8);
+}
+
+section{
+    padding:90px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:50px;
+    color:#ffd000;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#1b1b1b;
+    border:1px solid #2d2d2d;
+    border-radius:20px;
+    padding:35px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#ffd000;
+}
+
+.card h3{
+    color:#ffd000;
+    margin-bottom:15px;
+    font-size:28px;
+}
+
+.card p{
+    line-height:1.7;
+    color:#ddd;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.feature{
+    text-align:center;
+    background:#1b1b1b;
+    padding:30px;
+    border-radius:20px;
+    transition:.4s;
+}
+
+.feature:hover{
+    transform:translateY(-8px);
+}
+
+.icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.contacts{
+    text-align:center;
+}
+
+.contacts p{
+    font-size:22px;
+    margin:15px 0;
+}
+
+.contact-btn{
+    margin-top:25px;
+}
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:25px;
+    color:#aaa;
+}
+
+.animate{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.animate.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .driver{
+        font-size:20px;
+    }
+
+    nav ul{
+        display:none;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">🚕 Такси Магомед</div>
+        <ul>
+            <li><a href="#tariffs">Тарифы</a></li>
+            <li><a href="#advantages">Преимущества</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Надёжное такси 24/7</h1>
+        <p>Комфортные поездки по городу и за его пределами</p>
+        <div class="driver">
+            Вахаев Магомед Исаевич
+        </div>
+
+        <a href="tel:+79640604308" class="call-btn">
+            📞 Позвонить
+        </a>
+    </div>
+</section>
+
+<section id="tariffs">
+    <div class="container">
+        <h2 class="section-title animate">Тарифы</h2>
+
+        <div class="cards">
+            <div class="card animate">
+                <h3>🚕 По городу</h3>
+                <p>
+                    Минимальная стоимость поездки —
+                    <strong>500 рублей</strong>.
+                </p>
+                <br>
+                <p>
+                    Чем дальше расстояние, тем выше стоимость поездки.
+                </p>
+            </div>
+
+            <div class="card animate">
+                <h3>🚖 За город</h3>
+                <p>
+                    Минимальная стоимость поездки —
+                    <strong>700 рублей</strong>.
+                </p>
+                <br>
+                <p>
+                    Чем дальше расстояние, тем выше стоимость поездки.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="advantages">
+    <div class="container">
+        <h2 class="section-title animate">Наши преимущества</h2>
+
+        <div class="features">
+            <div class="feature animate">
+                <div class="icon">🚕</div>
+                <h3>Быстрая подача</h3>
+            </div>
+
+            <div class="feature animate">
+                <div class="icon">⭐</div>
+                <h3>Комфортные поездки</h3>
+            </div>
+
+            <div class="feature animate">
+                <div class="icon">🤝</div>
+                <h3>Вежливый водитель</h3>
+            </div>
+
+            <div class="feature animate">
+                <div class="icon">🕒</div>
+                <h3>24 часа в сутки</h3>
+            </div>
+
+            <div class="feature animate">
+                <div class="icon">📍</div>
+                <h3>Город и межгород</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contacts">
+    <div class="container contacts">
+        <h2 class="section-title animate">Контакты</h2>
+
+        <p class="animate">
+            <strong>Водитель:</strong><br>
+            Вахаев Магомед Исаевич
+        </p>
+
+        <p class="animate">
+            <strong>Телефон:</strong><br>
+            8 (964) 060-43-08
+        </p>
+
+        <a href="tel:+79640604308" class="call-btn contact-btn animate">
+            📞 Позвонить сейчас
+        </a>
+    </div>
+</section>
+
+<footer>
+    © 2026 Такси Магомед. Безопасные и комфортные поездки.
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+document.querySelectorAll('.animate').forEach(el=>{
+    observer.observe(el);
+});
+</script>
+
+</body>
+</html>
